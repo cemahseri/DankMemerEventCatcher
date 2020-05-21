@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{75477368-5A9E-4BB2-9E95-C8498D303EAB}") = "DankMemerEventCatcher", "DankMemerEventCatcher.csproj", "{36955535-161F-4811-96C6-70BFEB0C960C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36955535-161F-4811-96C6-70BFEB0C960C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36955535-161F-4811-96C6-70BFEB0C960C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36955535-161F-4811-96C6-70BFEB0C960C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36955535-161F-4811-96C6-70BFEB0C960C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D803F92D-7F1A-4E69-9721-440D26F12D26}
+	EndGlobalSection
+EndGlobal
