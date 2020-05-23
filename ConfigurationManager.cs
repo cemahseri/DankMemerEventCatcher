@@ -11,7 +11,10 @@ namespace EventCatcherSelfbot
 
         public static Configuration GetConfiguration()
         {
-            SetDefaults();
+            if (File.Exists(ConfigurationFile))
+            {
+                SetDefaults();
+            }
 
             using (var fileStream = File.OpenRead(ConfigurationFile))
             using (var streamReader = new StreamReader(fileStream, new UTF8Encoding(false)))
@@ -22,11 +25,6 @@ namespace EventCatcherSelfbot
 
         private static void SetDefaults()
         {
-            if (File.Exists(ConfigurationFile))
-            {
-                return;
-            }
-
             File.WriteAllText(ConfigurationFile, JsonConvert.SerializeObject(new Configuration(), Formatting.Indented));
 
             Console.WriteLine("First, configure the configuration file.");

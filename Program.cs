@@ -5,15 +5,22 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.EventArgs;
+using EventCatcherSelfbot;
 
-namespace EventCatcherSelfbot
+namespace DankMemerEventCatcher
 {
     internal static class Program
     {
-        private static DiscordClient _client;
-        private static Configuration _configuration;
+        private static IEnumerable<string> ExpectedPrefixes { get; } = new List<string>
+        {
+            "Type",
+            "typing"
+        };
 
         private static readonly Random Random = new Random();
+
+        private static DiscordClient _client;
+        private static Configuration _configuration;
 
         private static async Task Main()
         {
@@ -32,12 +39,6 @@ namespace EventCatcherSelfbot
             await _client.ConnectAsync().ConfigureAwait(false);
             await Task.Delay(-1).ConfigureAwait(false);
         }
-
-        private static IEnumerable<string> ExpectedPrefixes { get; } = new List<string>
-        {
-            "Type",
-            "typing"
-        };
 
         private static async Task OnMessageCreated(MessageCreateEventArgs e)
         {
