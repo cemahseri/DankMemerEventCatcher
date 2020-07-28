@@ -88,7 +88,7 @@ namespace DankMemerEventCatcher
                 return;
             }
 
-            // Developer of the bot has been put invisible character (Alt + 0173) to between every character.
+            // Developer of the bot has been put zero-width space (Alt + 0173) or something like that to between some characters.
             // So, when you try to copy-paste the specific message, it'll not accept it. Also because of this, you cannot parse the message.
             // So, remove non-ASCII characters with this Regex pattern.
             var messageToSend = Regex.Replace(e.Message.Content.Substring(lastSecondIndex + 1, lastIndex - lastSecondIndex - 1), @"[^\u0000-\u007F]+", "");
