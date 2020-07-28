@@ -11,7 +11,7 @@ namespace EventCatcherSelfbot
 
         public static Configuration GetConfiguration()
         {
-            if (File.Exists(ConfigurationFile))
+            if (!File.Exists(ConfigurationFile))
             {
                 SetDefaults();
             }
