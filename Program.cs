@@ -42,7 +42,7 @@ namespace DankMemerEventCatcher
 
         private static async Task OnMessageCreated(MessageCreateEventArgs e)
         {
-            // If it's Dank Memer bot.
+            // If it's not the Dank Memer bot.
             if (!e.Author.IsBot || e.Author.Id != 270904126974590976)
             {
                 return;
