@@ -11,7 +11,11 @@
     <AssemblyName>DankMemerEventCatcher</AssemblyName>
     <RootNamespace>DankMemerEventCatcher</RootNamespace>
   </PropertyGroup>
+
   <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="LICENSE" />
+    <None Remove="README.md" />
     <None Remove="Libraries\DSharpPlus.dll" />
     <None Remove="Libraries\Newtonsoft.Json.dll" />
   </ItemGroup>
