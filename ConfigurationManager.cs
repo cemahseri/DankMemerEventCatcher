@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace EventCatcherSelfbot
+namespace DankMemerEventCatcher
 {
     public static class ConfigurationManager
     {
