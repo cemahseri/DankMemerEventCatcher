@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.EventArgs;
-using EventCatcherSelfbot;
 
 namespace DankMemerEventCatcher
 {
@@ -89,7 +88,7 @@ namespace DankMemerEventCatcher
             }
 
             // Developer of the bot has been put zero-width space (Alt + 0173) or something like that to between some characters.
-            // So, when you try to copy-paste the specific message, it'll not accept it. Also because of this, you cannot parse the message.
+            // Because of this, when you try to copy-paste the specific message, it'll not accept it. Also, this is preventing you from parsing the message.
             // So, remove non-ASCII characters with this Regex pattern.
             var messageToSend = Regex.Replace(e.Message.Content.Substring(lastSecondIndex + 1, lastIndex - lastSecondIndex - 1), @"[^\u0000-\u007F]+", "");
 
@@ -99,12 +98,12 @@ namespace DankMemerEventCatcher
             await Task.Delay(Random.Next(_configuration.MinimumInterval, _configuration.MaximumInterval + 1)).ConfigureAwait(false);
 
             await e.Channel.SendMessageAsync(messageToSend).ConfigureAwait(false);
+
+            // Log it into the console, so you can know what's up.
             Console.WriteLine("Replied in " + e.Guild.Name + " guild, #" + e.Channel.Name + " channel.");
         }
 
-        private static bool ShouldContinue(string source, int lastSecondIndex)
-        {
-            return ExpectedPrefixes.Any(p => source.Substring(lastSecondIndex - 1 - p.Length, p.Length) == p);
-        }
+        private static bool ShouldContinue(string source, int lastSecondIndex) =>
+            ExpectedPrefixes.Any(p => source.Substring(lastSecondIndex - 1 - p.Length, p.Length) == p);
     }
 }
