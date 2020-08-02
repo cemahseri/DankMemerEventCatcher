@@ -1,4 +1,4 @@
-﻿namespace EventCatcherSelfbot
+﻿namespace DankMemerEventCatcher
 {
     public sealed class Configuration
     {
